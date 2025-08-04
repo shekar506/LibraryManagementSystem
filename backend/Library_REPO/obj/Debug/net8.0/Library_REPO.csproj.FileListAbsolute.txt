@@ -1,0 +1,15 @@
+C:\Users\ShekarBestha\source\repos\LibraryManagementSystem\Library_REPO\bin\Debug\net8.0\Library_REPO.deps.json
+C:\Users\ShekarBestha\source\repos\LibraryManagementSystem\Library_REPO\bin\Debug\net8.0\Library_REPO.dll
+C:\Users\ShekarBestha\source\repos\LibraryManagementSystem\Library_REPO\bin\Debug\net8.0\Library_REPO.pdb
+C:\Users\ShekarBestha\source\repos\LibraryManagementSystem\Library_REPO\bin\Debug\net8.0\Library_DAL.dll
+C:\Users\ShekarBestha\source\repos\LibraryManagementSystem\Library_REPO\bin\Debug\net8.0\Library_DAL.pdb
+C:\Users\ShekarBestha\source\repos\LibraryManagementSystem\Library_REPO\obj\Debug\net8.0\Library_REPO.csproj.AssemblyReference.cache
+C:\Users\ShekarBestha\source\repos\LibraryManagementSystem\Library_REPO\obj\Debug\net8.0\Library_REPO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ShekarBestha\source\repos\LibraryManagementSystem\Library_REPO\obj\Debug\net8.0\Library_REPO.AssemblyInfoInputs.cache
+C:\Users\ShekarBestha\source\repos\LibraryManagementSystem\Library_REPO\obj\Debug\net8.0\Library_REPO.AssemblyInfo.cs
+C:\Users\ShekarBestha\source\repos\LibraryManagementSystem\Library_REPO\obj\Debug\net8.0\Library_REPO.csproj.CoreCompileInputs.cache
+C:\Users\ShekarBestha\source\repos\LibraryManagementSystem\Library_REPO\obj\Debug\net8.0\Library_.EE4B20B4.Up2Date
+C:\Users\ShekarBestha\source\repos\LibraryManagementSystem\Library_REPO\obj\Debug\net8.0\Library_REPO.dll
+C:\Users\ShekarBestha\source\repos\LibraryManagementSystem\Library_REPO\obj\Debug\net8.0\refint\Library_REPO.dll
+C:\Users\ShekarBestha\source\repos\LibraryManagementSystem\Library_REPO\obj\Debug\net8.0\Library_REPO.pdb
+C:\Users\ShekarBestha\source\repos\LibraryManagementSystem\Library_REPO\obj\Debug\net8.0\ref\Library_REPO.dll
