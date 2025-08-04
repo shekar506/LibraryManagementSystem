@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <h2>Issue History for Member ID: {{ memberId }}</h2>
+  <table class="table table-striped mt-3" *ngIf="issues.length > 0">
+    <thead>
+      <tr>
+        <th>Book Title</th>
+        <th>Author</th>
+        <th>Issue Date</th>
+        <th>Return Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let issue of issues">
+        <td>{{ issue.book.title }}</td>
+        <td>{{ issue.book.author }}</td>
+        <td>{{ issue.issueDate }}</td>
+        <td>{{ issue.returnDate || 'Not Returned' }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="issues.length === 0">
+    <p>No issue history found for this member.</p>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<nav class="navbar bg-dark p-3">
+  <div class="logo text-white fw-bold">
+    <a routerLink="/" class="text-white text-decoration-none">📚 LibraryAdmin</a>
+  </div>
+  <ul class="nav-links list-unstyled d-flex gap-4 mb-0">
+    <li><a routerLink="/manage-books" class="text-white text-decoration-none">Manage Books</a></li>
+    <li><a routerLink="/manage-members" class="text-white text-decoration-none">Manage Members</a></li>
+    <li><a routerLink="/issue-book" class="text-white text-decoration-none">Issue Book</a></li>
+    <li><a (click)="logout()" class="text-white text-decoration-none">Logout</a></li>
+  </ul>
+</nav>

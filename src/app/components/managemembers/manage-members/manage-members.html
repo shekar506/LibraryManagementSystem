@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manage Members</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    /* Glass Container */
+    .glass-container {
+      width: 100%;
+      max-width: 1100px;
+      background: rgba(255, 255, 255, 0.24);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+      backdrop-filter: blur(8.5px);
+      -webkit-backdrop-filter: blur(8.5px);
+      border-radius: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 38px 30px;
+      margin: 1rem auto 2rem auto;
+    }
+
+    .glass-container h2 {
+      color: #183459;
+      font-weight: 900;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 28px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Form Styling */
+    .form-label {
+      font-weight: 600;
+      color: #3c424f;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .form-control {
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 1rem;
+      border: 1.5px solid #dddddd;
+      margin-bottom: 18px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      background: rgba(255, 255, 255, 0.84);
+    }
+
+    .form-control:focus {
+      border-color: #356ba1;
+      box-shadow: 0 0 6px rgba(45, 100, 207, 0.15);
+      background: #f7faff;
+    }
+
+    /* Buttons */
+    .btn-success {
+      font-weight: 700;
+      font-size: 1.05rem;
+      background: linear-gradient(90deg, #42ba96 0%, #268d67 100%);
+      box-shadow: 0 4px 12px rgba(66, 186, 150, 0.13);
+      border: none;
+      border-radius: 50px;
+      padding: 10px 0;
+      width: 100%;
+      transition: 0.18s;
+      cursor: pointer;
+    }
+    .btn-success:hover {
+      background: linear-gradient(90deg, #268d67 0%, #42ba96 100%);
+      box-shadow: 0 7px 18px rgba(66, 186, 150, 0.22);
+      transform: translateY(-1px) scale(1.025);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      font-weight: 600;
+      border-radius: 50px;
+      padding: 10px 0;
+      border: 1.5px solid #999;
+      background-color: #e56161;
+      width: 100%;
+      margin-top: 0.5rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      cursor: pointer;
+    }
+    .btn-secondary:hover {
+      background-color: #e2e2e2;
+      color: #333;
+    }
+
+    /* Table Styling */
+    .custom-table-wrapper {
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.58);
+      box-shadow: 0 4px 24px 0 rgba(31, 38, 135, 0.13);
+      margin-top: 20px;
+    }
+
+    table {
+      margin-bottom: 0;
+    }
+
+    .table thead {
+      background: rgba(31, 38, 135, 0.32);
+      color: white;
+    }
+
+    .table th,
+    .table td {
+      border: none !important;
+      vertical-align: middle;
+      padding: 14px 16px;
+      font-size: 15px;
+    }
+    body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('https://i.pinimg.com/1200x/ae/eb/42/aeeb42b0381c08475ac1c48c0237974b.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  margin: 0;
+}
+
+
+    .table th {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .table td {
+      color: #222f3e;
+      font-weight: 500;
+    }
+
+    .table tbody tr {
+      transition: background-color 0.22s, transform 0.18s;
+    }
+
+    .table tbody tr:hover {
+      background: rgba(224, 242, 254, 0.8);
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      cursor: pointer;
+    }
+
+    /* Action Buttons */
+    .btn-warning {
+      background: linear-gradient(90deg, #f9d423 0%, #ff8800 100%);
+      font-weight: 600;
+      border-radius: 20px;
+      border: none;
+      color: #333;
+      padding: 6px 17px;
+      transition: 0.15s;
+      cursor: pointer;
+    }
+    .btn-warning:hover {
+      background: linear-gradient(90deg, #ff8800 0%, #f9d423 100%);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .btn-danger {
+      background: linear-gradient(90deg, #dc3545 0%, #a6202a 100%);
+      font-weight: 600;
+      border-radius: 20px;
+      border: none;
+      color: #fff;
+      padding: 6px 17px;
+      transition: 0.15s;
+      cursor: pointer;
+    }
+    .btn-danger:hover {
+      background: linear-gradient(90deg, #a6202a 0%, #dc3545 100%);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .btn-sm {
+      font-size: 14px;
+    }
+
+    .me-1 {
+      margin-right: 8px !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 767px) {
+      .glass-container {
+        padding: 13px 20px;
+        max-width: 99vw;
+      }
+      .custom-table-wrapper {
+        border-radius: 11px;
+      }
+      .table th,
+      .table td {
+        font-size: 14px;
+        padding: 9px 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="glass-container">
+    <h2 class="text-center mb-4">Manage Members</h2>
+
+    <form (ngSubmit)="onSubmit()" #memberForm="ngForm">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input
+          [(ngModel)]="member.name"
+          name="name"
+          id="name"
+          required
+          class="form-control"
+          autocomplete="off"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input
+          [(ngModel)]="member.email"
+          name="email"
+          id="email"
+          type="email"
+          required
+          class="form-control"
+          autocomplete="off"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone:</label>
+        <input
+          [(ngModel)]="member.phone"
+          name="phone"
+          id="phone"
+          required
+          class="form-control"
+          autocomplete="off"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-success w-100 mb-2">
+        {{ isEditMode ? 'Update Member' : 'Add Member' }}
+      </button>
+      <button type="button" class="btn btn-secondary w-100" (click)="clearForm()">
+        Clear
+      </button>
+    </form>
+
+    <hr />
+
+    <div class="custom-table-wrapper">
+      <table class="table table-hover table-bordered text-center mb-0">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let mem of members">
+            <td>{{ mem.memberId }}</td>
+            <td>{{ mem.name }}</td>
+            <td>{{ mem.email }}</td>
+            <td>{{ mem.phone }}</td>
+            <td>
+              <button class="btn btn-sm btn-warning me-1" (click)="onEdit(mem)">
+                Edit
+              </button>
+              <button class="btn btn-sm btn-danger" (click)="deleteMember(mem.memberId)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

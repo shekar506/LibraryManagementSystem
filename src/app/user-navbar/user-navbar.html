@@ -1,0 +1,12 @@
+<nav class="navbar">
+  <div class="logo">
+    <a routerLink="/">📚 LibraryApp</a>
+  </div>
+  <ul class="nav-links">
+    <li><a routerLink="/user-dashboard" routerLinkActive="active">Dashboard</a></li>
+<a [routerLink]="['/return-book']">Return book</a>
+
+    <li><a (click)="logout()">Logout</a></li>
+  </ul>
+</nav>
+
